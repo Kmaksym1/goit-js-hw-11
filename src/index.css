@@ -1,0 +1,84 @@
+.search-form{
+    height: 38px;
+    background-image: linear-gradient(to right, rgb(49, 126, 242) ,#FFE259); 
+    display: flex;
+    justify-content: center;
+    gap: 10px
+
+}
+.input{
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;border-style: solid;
+    border-width: 2px;
+    border-radius: 255px 15px 15px 225px / 15px 225px 255px 15px;
+    margin-top: 3px;
+    height: 26px;
+}
+.button {
+    /* padding-top: 3px; */
+    width: 78px;
+    height: 32px;
+    /* padding-bottom: 3px; */
+
+
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  padding-top: 3px;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 0.6px, 0);
+}
+
+.button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 1px 3px 2px -4px;
+}
+.gallery-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.card-li{
+    list-style-type: none;
+}
+.info{
+    display: flex;
+    justify-content: space-around;
+}
+.info-item{
+    word-break:break-all;
+
+}
+.load-more{
+    margin: 0 auto;
+    display: none;
+    width: 128px;
+}
