@@ -116,7 +116,7 @@ function onLoadEL(){
                 loadMoreEl.style.display='none';
                 Notiflix.Notify.info("We're sorry, but you've reached the end of search results.")
             }
-                                // observer.observe(target)
+
 
                     galleryListEL.insertAdjacentHTML('beforeend', createMarkupCards(data))
                     gallery.refresh();
@@ -133,4 +133,3 @@ function onLoadEL(){
     captionsData: 'alt',
     captionDelay: 250
 });
-// gallery.next();
