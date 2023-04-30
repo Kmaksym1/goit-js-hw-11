@@ -71,7 +71,9 @@ console.log(fetchArr(input)
         Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
     }
     galleryListEL.innerHTML=(createMarkupCards(data))
-    Notiflix.Notify.success(`Hooray! We found ${data.total} images.`);
+    if(data.total>=1){
+        Notiflix.Notify.success(`Hooray! We found ${data.total} images.`);
+    }
         gallery.refresh()
 }).catch(err=>{
     Notiflix.Notify.failure(err);
@@ -106,11 +108,14 @@ function createMarkupCards(arr){
 }
 
 loadMoreEl.addEventListener('click', onLoadEL)
-
+let dataTotalCurrent
 function onLoadEL(){
+    
     page+=1;
     fetchArr(input, page)
         .then((data)=>{
+            dataTotalCurrent = data.totalHits
+            dataTotalCurrent+=data.totalHits
             let hit = Number(page*40);
             if(hit >=data.totalHits){
                 loadMoreEl.style.display='none';
@@ -120,7 +125,7 @@ function onLoadEL(){
 
                     galleryListEL.insertAdjacentHTML('beforeend', createMarkupCards(data))
                     gallery.refresh();
-                    Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`)
+                    Notiflix.Notify.success(`Hooray! We found ${dataTotalCurrent} images.`)
             })
 }
 
@@ -128,7 +133,7 @@ function onLoadEL(){
 
 
 
-          // Бібліотека SimpleLightbox
+    
     var gallery = new SimpleLightbox('.card-li a', {
     captionsData: 'alt',
     captionDelay: 250
